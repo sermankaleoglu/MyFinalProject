@@ -8,10 +8,10 @@ using System.Text;
 
 namespace DataAccess.Concrete.InMemory
 {
-    public class InMemeoryProductDal : IProductDal
+    public class EfProductDal : IProductDal
     {
         List<Product> _products;
-        public InMemeoryProductDal()
+        public EfProductDal()
         {
             //Oracle,Sql Server,Postgres,MongoDB
             _products = new List<Product> {

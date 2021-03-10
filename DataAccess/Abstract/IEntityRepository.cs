@@ -8,7 +8,10 @@ namespace DataAccess.Abstract
 {
     //generic constraint
     //class:referans tip olabilir.
-    public interface IEntityRepository<T>where T:class,IEntity
+    //IEntity:IEntity olabilir veya IEntity implemente eden bir nesne olabilir.
+    //new():new'lenebilir olmalı.
+    //IEntity newlenemez,interfacedir.
+    public interface IEntityRepository<T>where T:class,IEntity,new()
     {
         List<T> GelAll(Expression<Func<T,bool>>filter=null);
         T Get(Expression<Func<T, bool>> filter);
