@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,12 +48,12 @@ namespace DataAccess.Concrete.InMemory
             _products.Remove(productToDelete);
         }
 
-        public List<Product> GelAll()
+        public List<Product> GetAll()
         {
             return _products;
         }
 
-        public List<Product> GelAll(Expression<Func<Product, bool>> filter = null)
+        public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {
             throw new NotImplementedException();
         }
@@ -76,6 +77,11 @@ namespace DataAccess.Concrete.InMemory
             productToUpdate.UnitPrice = product.UnitPrice;
             productToUpdate.UnitsInStock = product.UnitsInStock;
             //eğer EF kullansaydık Ef bunları kendi yazıcak.
+        }
+
+        public List<ProductDetailDto> GetProductDetails()
+        {
+            throw new NotImplementedException();
         }
     }
 }
